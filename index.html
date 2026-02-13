@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Quieres ser mi San Valentín?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="proposal" class="card active">
+        <h1>💘 ¿Me concedes ser tu San Valentín? 💘</h1>
+        <p>
+          Desde que llegaste, todos mis días tienen un brillo especial. Hoy quiero
+          preguntarte algo muy importante...
+        </p>
+
+        <div class="buttons">
+          <button id="yesBtn" class="btn yes">Sí, obvio ❤️</button>
+          <button id="noBtn" class="btn no">No 🙈</button>
+        </div>
+
+        <p id="noMessage" class="hint" aria-live="polite"></p>
+      </section>
+
+      <section id="memories" class="card hidden" aria-hidden="true">
+        <h2>Nuestros momentos favoritos ✨</h2>
+        <p>
+          Gracias por decir que sí. Aquí guardé algunos recuerdos especiales
+          nuestros.
+        </p>
+
+        <div class="music-controls">
+          <button id="playMusic" class="btn secondary">▶️ Reproducir canción</button>
+          <button id="pauseMusic" class="btn secondary">⏸️ Pausar</button>
+        </div>
+
+        <audio id="bgMusic" loop>
+          <source src="assets/music/our-song.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio HTML5.
+        </audio>
+
+        <section>
+          <h3>📸 Fotitos nuestras</h3>
+          <div id="photoGrid" class="grid"></div>
+        </section>
+
+        <section>
+          <h3>🎥 Videos que amo de nosotros</h3>
+          <div id="videoGrid" class="grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="photoTemplate">
+      <article class="memory-card">
+        <img loading="lazy" alt="" />
+        <p></p>
+      </article>
+    </template>
+
+    <template id="videoTemplate">
+      <article class="memory-card">
+        <video controls preload="metadata"></video>
+        <p></p>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
